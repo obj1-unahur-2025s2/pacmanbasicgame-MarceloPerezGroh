@@ -12,7 +12,19 @@ program pacmanGame {
 	
 	// personaje principal
 	game.addVisualCharacter(pacman)
-	
+	//configuracion del teclado
+    //para arriba
+    keyboard.w().onPressDo({pacman.position().up(1)})
+    //para abajo
+    keyboard.s().onPressDo({pacman.position().down(1)})
+    //para izq
+    keyboard.a().onPressDo({pacman.position().left(1)})
+    //para der
+    keyboard.d().onPressDo({pacman.position().right(1)})
+	//cambiar skin con la tecla "space"
+    keyboard.space().onPressDo({pacman.cambiarSkin("pacmanPurpura.png")})
+	//cambiar skin a la original con la letra "o"
+    keyboard.o().onPressDo({pacman.cambiarSkin("pacman.png")})
 	// que arranque el juego!
 	game.start()
 	
